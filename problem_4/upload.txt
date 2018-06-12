@@ -1,0 +1,8 @@
+#!/bin/sh
+
+su ec2-user
+echo "Creating SSH key"
+ssh-keygen -b 2048 -t rsa -f /home/ec2-user/.ssh/id_rsa -q -N ""
+cd /home/ec2-user/.ssh
+aws s3 cp id_rsa.pub s3://nawaz95/id_rsa.pub
+

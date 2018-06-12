@@ -1,0 +1,9 @@
+#!/bin/sh
+
+su ec2-user
+aws s3 cp s3://nawaz95/id_rsa.pub /home/ec2-user/id_rsa.pub
+echo "dowloading...."
+cat /home/ec2-user/id_rsa.pub >> /home/ec2-user/.ssh/authorized_keys
+chmod 700 /home/ec2-user/.ssh
+chmod 600 /home/ec2-user/.ssh/*
+
